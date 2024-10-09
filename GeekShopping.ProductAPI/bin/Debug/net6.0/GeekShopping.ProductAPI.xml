@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GeekShopping.ProductAPI</name>
+    </assembly>
+    <members>
+        <member name="M:GeekShopping.ProductAPI.Controllers.ProductController.FindAll">
+            <summary>
+            Obtém um produto específico do banco de dados
+            </summary>
+            <returns>IEnumerable ProductDto</returns>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Controllers.ProductController.FindById(System.Int64)">
+            <summary>
+            Obtém um produto específico do banco de dados
+            </summary>
+            <param name="id">Id do produto a ser pesquisado no banco de dados</param>
+            <returns>ProductDto</returns>
+            <response code="200">Caso exista o produto no banco de dados</response>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Controllers.ProductController.Create(GeekShopping.ProductAPI.Data.Dtos.ProductDto)">
+            <summary>
+            Criar um produto no banco de dados
+            </summary>
+            <param name="productDto">Objeto com os campos necessários para criação do produto</param>
+            <returns>ProductDto</returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Controllers.ProductController.Update(GeekShopping.ProductAPI.Data.Dtos.ProductDto)">
+            <summary>
+            Atualiza um produto no banco de dados
+            </summary>
+            <param name="productDto">Objeto com os campos necessários para atualização do produto</param>
+            <returns>ProductDto</returns>
+            <response code="201">Caso a atualização seja feita com sucesso</response>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Controllers.ProductController.Delete(System.Int32)">
+            <summary>
+            Remove um determinado produto do banco de dados
+            </summary>
+            <param name="id">Id do produto a ser pesquisado no banco de dados</param>
+            <returns>ActionResult</returns>
+            <response code="204">Caso ocorra a remoção do item</response>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.FindAll">
+            <inheritdoc/>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.FindById(System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.Create(GeekShopping.ProductAPI.Data.Dtos.ProductDto)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.Delete(System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.Update(GeekShopping.ProductAPI.Data.Dtos.ProductDto)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
