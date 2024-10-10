@@ -1,17 +1,29 @@
 ﻿using GeekShopping.ProductAPI.Data.Dtos;
 using GeekShopping.ProductAPI.Repository;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GeekShopping.ProductAPI.Controllers
 {
+    /// <summary>
+    /// Controlador de produtos
+    /// </summary>
     [ApiController]
     [Route("api/v1/[controller]")]
     public class ProductController : ControllerBase
     {
+        //----------------------------------------//
+        //          Variáveis membro              //
+        //----------------------------------------//
         private IProductRepository _repository;
 
+        //----------------------------------------//
+        //          Construtor                    //
+        //----------------------------------------//
+        /// <summary>
+        /// Construtor padrão
+        /// </summary>
+        /// <param name="repository"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public ProductController(IProductRepository repository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));

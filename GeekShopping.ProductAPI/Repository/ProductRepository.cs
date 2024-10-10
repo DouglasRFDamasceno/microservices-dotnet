@@ -6,18 +6,45 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GeekShopping.ProductAPI.Repository
 {
+    /// <summary>
+    /// Repositório dos produtos
+    /// </summary>
     public class ProductRepository : IProductRepository
     {
+        //----------------------------------------//
+        //          Variáveis membro              //
+        //----------------------------------------//
+        /// <summary>
+        /// MySQL context
+        /// </summary>
         private readonly MySQLContext _context;
+
+        /// <summary>
+        /// Mapper
+        /// </summary>
         private readonly IMapper _mapper;
 
+        //----------------------------------------//
+        //          Contruturo                    //
+        //----------------------------------------//
+        /// <summary>
+        /// Contruturo padrão
+        /// </summary>
+        /// <param name="context">MySQL context</param>
+        /// <param name="mapper"></param>
         public ProductRepository(MySQLContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-/// <inheritdoc/>
+        //----------------------------------------//
+        //          Métodos públicos              //
+        //----------------------------------------//
+        /// <summary>
+        /// Obtém um produto específico do banco de dados
+        /// </summary>
+        /// <returns>IEnumerable ProductDto</returns>
         public async Task<IEnumerable<ProductDto>> FindAll()
         {
             List<Product> products = await _context.Products.ToListAsync();
@@ -26,7 +53,11 @@ namespace GeekShopping.ProductAPI.Repository
             return dtos;
         }
 
-/// <inheritdoc/>
+        /// <summary>
+        /// Obtém um produto específico do banco de dados
+        /// </summary>
+        /// <param name="id">Id do produto a ser pesquisado no banco de dados</param>
+        /// <returns>ProductDto</returns>
         public async Task<ProductDto> FindById(long id)
         {
             Product? product = await _context.Products.Where(p => p.Id == id)
@@ -34,7 +65,11 @@ namespace GeekShopping.ProductAPI.Repository
             return _mapper.Map<ProductDto>(product);
         }
 
-/// <inheritdoc/>
+        /// <summary>
+        /// Criar um produto no banco de dados
+        /// </summary>
+        /// <param name="productDto">Objeto com os campos necessários para criação do produto</param>
+        /// <returns>ProductDto</returns>
         public async Task<ProductDto> Create(ProductDto productDto)
         {
             Product product = _mapper.Map<Product>(productDto);
@@ -43,7 +78,24 @@ namespace GeekShopping.ProductAPI.Repository
             return _mapper.Map<ProductDto>(product);
         }
 
-/// <inheritdoc/>
+        /// <summary>
+        /// Atualiza um produto no banco de dados
+        /// </summary>
+        /// <param name="productDto">Objeto com os campos necessários para atualização do produto</param>
+        /// <returns>ProductDto</returns>
+        public async Task<ProductDto> Update(ProductDto productDto)
+        {
+            Product product = _mapper.Map<Product>(productDto);
+            _context.Products.Update(product);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<ProductDto>(product);
+        }
+
+        /// <summary>
+        /// Remove um determinado produto do banco de dados
+        /// </summary>
+        /// <param name="id">Id do produto a ser pesquisado no banco de dados</param>
+        /// <returns>ActionResult</returns>
         public async Task<bool> Delete(long id)
         {
             try
@@ -62,15 +114,6 @@ namespace GeekShopping.ProductAPI.Repository
             {
                 return false;
             }
-        }
-
-/// <inheritdoc/>
-        public async Task<ProductDto> Update(ProductDto productDto)
-        {
-            Product product = _mapper.Map<Product>(productDto);
-            _context.Products.Update(product);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<ProductDto>(product);
         }
     }
 }

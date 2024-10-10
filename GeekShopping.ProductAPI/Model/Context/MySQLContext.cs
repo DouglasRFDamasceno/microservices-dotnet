@@ -2,13 +2,33 @@
 
 namespace GeekShopping.ProductAPI.Model.Context
 {
+    /// <summary>
+    /// MySQL context
+    /// </summary>
     public class MySQLContext : DbContext
     {
+        //----------------------------------------//
+        //          Construtor                    //
+        //----------------------------------------//
+        /// <summary>
+        /// Construtor
+        /// </summary>
         public MySQLContext() { }
+        /// <summary>
+        /// Contrutor base
+        /// </summary>
+        /// <param name="options"></param>
         public MySQLContext(DbContextOptions<MySQLContext> options) : base(options) { }
 
+        /// <summary>
+        /// DBSet de produtos
+        /// </summary>
         public DbSet<Product> Products { get; set; }
 
+        /// <summary>
+        /// Carga na base de dados produtos
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasData(new Product
