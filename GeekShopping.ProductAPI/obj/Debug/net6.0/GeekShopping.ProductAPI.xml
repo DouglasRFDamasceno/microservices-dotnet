@@ -4,6 +4,23 @@
         <name>GeekShopping.ProductAPI</name>
     </assembly>
     <members>
+        <member name="T:GeekShopping.ProductAPI.Controllers.ProductController">
+            <summary>
+            Controlador de produtos
+            </summary>
+        </member>
+        <member name="F:GeekShopping.ProductAPI.Controllers.ProductController._repository">
+            <summary>
+            Repositório
+            </summary>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Controllers.ProductController.#ctor(GeekShopping.ProductAPI.Repository.IProductRepository)">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name="repository"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
         <member name="M:GeekShopping.ProductAPI.Controllers.ProductController.FindAll">
             <summary>
             Obtém um produto específico do banco de dados
@@ -42,20 +59,173 @@
             <returns>ActionResult</returns>
             <response code="204">Caso ocorra a remoção do item</response>
         </member>
+        <member name="T:GeekShopping.ProductAPI.Data.Dtos.ProductDto">
+            <summary>
+            Classe de produtos DTO
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Data.Dtos.ProductDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Data.Dtos.ProductDto.Name">
+            <summary>
+            Nome
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Data.Dtos.ProductDto.Price">
+            <summary>
+            Preço
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Data.Dtos.ProductDto.Description">
+            <summary>
+            Descrição
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Data.Dtos.ProductDto.CategoryName">
+            <summary>
+            Nome da categoria
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Data.Dtos.ProductDto.ImageUrl">
+            <summary>
+            URL da imagem
+            </summary>
+        </member>
+        <member name="T:GeekShopping.ProductAPI.Model.Base.BaseEntity">
+            <summary>
+            Entidade Base
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Model.Base.BaseEntity.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:GeekShopping.ProductAPI.Model.Context.MySQLContext">
+            <summary>
+            MySQL context
+            </summary>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Model.Context.MySQLContext.#ctor">
+            <summary>
+            Construtor
+            </summary>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Model.Context.MySQLContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{GeekShopping.ProductAPI.Model.Context.MySQLContext})">
+            <summary>
+            Contrutor base
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Model.Context.MySQLContext.Products">
+            <summary>
+            DBSet de produtos
+            </summary>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Model.Context.MySQLContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Carga na base de dados produtos
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="T:GeekShopping.ProductAPI.Model.Product">
+            <summary>
+            Classe de produtos
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Model.Product.Name">
+            <summary>
+            Nome
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Model.Product.Price">
+            <summary>
+            Preço
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Model.Product.Description">
+            <summary>
+            Descrição
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Model.Product.CategoryName">
+            <summary>
+            Nome da categoria
+            </summary>
+        </member>
+        <member name="P:GeekShopping.ProductAPI.Model.Product.ImageUrl">
+            <summary>
+            URL da imagem
+            </summary>
+        </member>
+        <member name="T:GeekShopping.ProductAPI.Profiles.ProductProfile">
+            <summary>
+            Mapeamento do produto
+            </summary>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Profiles.ProductProfile.#ctor">
+            <summary>
+            Contrutor padrão
+            </summary>
+        </member>
+        <member name="T:GeekShopping.ProductAPI.Repository.ProductRepository">
+            <summary>
+            Repositório dos produtos
+            </summary>
+        </member>
+        <member name="F:GeekShopping.ProductAPI.Repository.ProductRepository._context">
+            <summary>
+            MySQL context
+            </summary>
+        </member>
+        <member name="F:GeekShopping.ProductAPI.Repository.ProductRepository._mapper">
+            <summary>
+            Mapper
+            </summary>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.#ctor(GeekShopping.ProductAPI.Model.Context.MySQLContext,AutoMapper.IMapper)">
+            <summary>
+            Contruturo padrão
+            </summary>
+            <param name="context">MySQL context</param>
+            <param name="mapper"></param>
+        </member>
         <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.FindAll">
-            <inheritdoc/>
+            <summary>
+            Obtém um produto específico do banco de dados
+            </summary>
+            <returns>IEnumerable ProductDto</returns>
         </member>
         <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.FindById(System.Int64)">
-            <inheritdoc/>
+            <summary>
+            Obtém um produto específico do banco de dados
+            </summary>
+            <param name="id">Id do produto a ser pesquisado no banco de dados</param>
+            <returns>ProductDto</returns>
         </member>
         <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.Create(GeekShopping.ProductAPI.Data.Dtos.ProductDto)">
-            <inheritdoc/>
-        </member>
-        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.Delete(System.Int64)">
-            <inheritdoc/>
+            <summary>
+            Criar um produto no banco de dados
+            </summary>
+            <param name="productDto">Objeto com os campos necessários para criação do produto</param>
+            <returns>ProductDto</returns>
         </member>
         <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.Update(GeekShopping.ProductAPI.Data.Dtos.ProductDto)">
-            <inheritdoc/>
+            <summary>
+            Atualiza um produto no banco de dados
+            </summary>
+            <param name="productDto">Objeto com os campos necessários para atualização do produto</param>
+            <returns>ProductDto</returns>
+        </member>
+        <member name="M:GeekShopping.ProductAPI.Repository.ProductRepository.Delete(System.Int64)">
+            <summary>
+            Remove um determinado produto do banco de dados
+            </summary>
+            <param name="id">Id do produto a ser pesquisado no banco de dados</param>
+            <returns>ActionResult</returns>
         </member>
     </members>
 </doc>

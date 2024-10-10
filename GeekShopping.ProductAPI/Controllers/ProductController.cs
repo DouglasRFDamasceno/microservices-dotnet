@@ -14,6 +14,9 @@ namespace GeekShopping.ProductAPI.Controllers
         //----------------------------------------//
         //          Variáveis membro              //
         //----------------------------------------//
+        /// <summary>
+        /// Repositório
+        /// </summary>
         private IProductRepository _repository;
 
         //----------------------------------------//
@@ -65,7 +68,7 @@ namespace GeekShopping.ProductAPI.Controllers
         /// <response code="201">Caso inserção seja feita com sucesso</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<ProductDto>> Create(ProductDto productDto)
+        public async Task<ActionResult<ProductDto>> Create([FromBody] ProductDto productDto)
         {
             if (productDto == null) return BadRequest();
             var product = await _repository.Create(productDto);
@@ -80,7 +83,7 @@ namespace GeekShopping.ProductAPI.Controllers
         /// <response code="201">Caso a atualização seja feita com sucesso</response>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<ProductDto>> Update(ProductDto productDto)
+        public async Task<ActionResult<ProductDto>> Update([FromBody] ProductDto productDto)
         {
             if (productDto == null) return BadRequest();
             var product = await _repository.Update(productDto);
