@@ -60,3 +60,14 @@ C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShoppi
 C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\obj\Debug\net6.0\GeekShopping.Web.pdb
 C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\obj\Debug\net6.0\GeekShopping.Web.genruntimeconfig.cache
 C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\obj\Debug\net6.0\ref\GeekShopping.Web.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\obj\Debug\net6.0\GeekShopping.Web.csproj.AssemblyReference.cache
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.Web\obj\Debug\net6.0\GeekShop.F63D869A.Up2Date

@@ -227,5 +227,20 @@
             <param name="id">Id do produto a ser pesquisado no banco de dados</param>
             <returns>ActionResult</returns>
         </member>
+        <member name="T:GeekShopping.ProductAPI.Utils.Role">
+            <summary>
+            Classe com as Roles 
+            </summary>
+        </member>
+        <member name="F:GeekShopping.ProductAPI.Utils.Role.Admin">
+            <summary>
+            Role Admin
+            </summary>
+        </member>
+        <member name="F:GeekShopping.ProductAPI.Utils.Role.Client">
+            <summary>
+            Role Client
+            </summary>
+        </member>
     </members>
 </doc>

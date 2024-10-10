@@ -1,5 +1,7 @@
 ﻿using GeekShopping.ProductAPI.Data.Dtos;
 using GeekShopping.ProductAPI.Repository;
+using GeekShopping.ProductAPI.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GeekShopping.ProductAPI.Controllers
@@ -37,6 +39,7 @@ namespace GeekShopping.ProductAPI.Controllers
         /// </summary>
         /// <returns>IEnumerable ProductDto</returns>
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<ProductDto>>> FindAll()
         {
             var products = await _repository.FindAll();
@@ -50,6 +53,7 @@ namespace GeekShopping.ProductAPI.Controllers
         /// <returns>ProductDto</returns>
         /// <response code="200">Caso exista o produto no banco de dados</response>
         [HttpGet("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<ProductDto>> FindById(long id)
         {
@@ -67,6 +71,7 @@ namespace GeekShopping.ProductAPI.Controllers
         /// <returns>ProductDto</returns>
         /// <response code="201">Caso inserção seja feita com sucesso</response>
         [HttpPost]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult<ProductDto>> Create([FromBody] ProductDto productDto)
         {
@@ -82,6 +87,7 @@ namespace GeekShopping.ProductAPI.Controllers
         /// <returns>ProductDto</returns>
         /// <response code="201">Caso a atualização seja feita com sucesso</response>
         [HttpPut]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult<ProductDto>> Update([FromBody] ProductDto productDto)
         {
@@ -97,6 +103,7 @@ namespace GeekShopping.ProductAPI.Controllers
         /// <returns>ActionResult</returns>
         /// <response code="204">Caso ocorra a remoção do item</response>
         [HttpDelete("{id}")]
+        [Authorize(Roles = Role.Admin)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult> Delete(int id)
         {

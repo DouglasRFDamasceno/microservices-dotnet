@@ -94,3 +94,11 @@ C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShoppi
 C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\obj\Debug\net6.0\ref\GeekShopping.ProductAPI.dll
 C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\GeekShopping.ProductAPI.xml
 C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\obj\Debug\net6.0\GeekShopping.ProductAPI.xml
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\io\Documents\Douglas\Aplicações\Alura\microservices-dotnet\GeekShopping.ProductAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
